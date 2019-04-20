@@ -6129,6 +6129,10 @@ table {
   z-index: auto;
 }
 
+.bg-navbar {
+  background-image: url('/Images/nav_bar.png');
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

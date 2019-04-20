@@ -1,2 +1,6 @@
 @tailwind preflight;
 @tailwind utilities;
+
+.bg-navbar {
+     background-image: url('/Images/nav_bar.png');
+}
