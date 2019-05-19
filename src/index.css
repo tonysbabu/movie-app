@@ -28576,3 +28576,29 @@ table {
     z-index: auto;
   }
 }
+
+@keyframes fadeInImg {
+  from
+   {opacity: 0}
+ to
+   {opacity: 1}
+}
+ 
+.img-loaded {
+  animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
+  position: relative;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+  animation-delay: 0.1s;
+}
+
+.navbar-container {
+  z-index: 1000000;
+  padding: 10px;
+}
+
+.genre-heading {
+  margin-left: 5px;
+}
+  

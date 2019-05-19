@@ -16,10 +16,10 @@ class Home extends Component {
         const {movies} = this.props;
         return (
             <div className="container">
-                <div className="navbar-container flex justify-between fixed bg-navbar w-full">
+                <div className="navbar-container flex justify-between  bg-navbar w-full ">
                   <div className="title-container flex">
                       <img className="w-5 h-5" src={back_button}/>
-                      <h4 className="text-white"> Romantic Comedy</h4>
+                      <h4 className="genre-heading text-white"> Romantic Comedy</h4>
                       </div>
                    <div className="search-container">
                    <img className="w-5 h-5" src={search_icon}/>
