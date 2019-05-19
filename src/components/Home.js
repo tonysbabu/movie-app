@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import poster1 from '../Images/poster1.jpg';
-import poster2 from '../Images/poster2.jpg';
-import poster3 from '../Images/poster3.jpg';
-import poster4 from '../Images/poster4.jpg';
+import Movie from './Movie';
+
 import back_button from '../Images/Back.png';
 import search_icon from '../Images/search.png';
 
@@ -15,6 +13,7 @@ class Home extends Component {
     }
 
     render() {
+        const {movies} = this.props;
         return (
             <div className="container">
                 <div className="navbar-container flex justify-between fixed bg-navbar w-full">
@@ -27,103 +26,9 @@ class Home extends Component {
                        </div>   
                 </div>    
                 <div className="flex flex-wrap content-center mx-1 " >
-
-                    <div class="w-1/3  md:w-1/8 text-center  px-1">
-                    <div className="image-container">
-                        <img src={poster1} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3 md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3  md:w-1/8 text-center  px-1">
-                    <div className="image-container">
-                        <img src={poster3} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3 md:w-1/8 text-center  px-1">
-                    <div className="image-container">
-                        <img src={poster4} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3  md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster1} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3   md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3   md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-
-                    </div>
-
-                    <div class="w-1/3  md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3   md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-
-                    </div>
-
-                    <div class="w-1/3  md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-
-                    </div>
-
-                    <div class="w-1/3   md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-
-                    </div>
-
-                    <div class="w-1/3  md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-
-                        </div>
-
-                    </div>
-
-                    <div class="w-1/3   md:w-1/8 text-center px-1">
-                    <div className="image-container">
-                        <img src={poster2} />
-                        </div>
-
-                    </div>
-
+                    {movies.length > 0 && movies.map((movie) => 
+                         <Movie movie={movie} />
+                    )}
                 </div>
 
             </div>
@@ -132,7 +37,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = (store) => {
-
+    return {
+        movies: store.movies.movies
+    }
 }
-
 export default connect(mapStateToProps)(Home);

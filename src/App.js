@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="container h-screen">
+      <div id="top-level-container" className="container h-screen">
         <Home/>
       </div>
     );
