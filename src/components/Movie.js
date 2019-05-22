@@ -47,21 +47,21 @@ class Movie extends Component {
     }
 
     render() {
-        const {id, name, image} = this.props.movie;
+        const { name } = this.props.movie;
         const { imageLoaded, imageVisible } = this.state;
-       return (
+        const posterImage = this.props.movie['poster-image'];
+        return (
             <div className="md:w-1/7 sm:w-1/3 text-center  px-1 " >
-                 <div className={`image-container`} id={`image-${id}`} ref={(el) => this.imageRef = el}>
-                   {imageLoaded?<img  className={`${imageVisible?'img-loaded':''}`} src={image} onLoad={this.handleLoadImage}/>:
+                 <div className={`image-container`} ref={(el) => this.imageRef = el}>
+                   {imageLoaded?<img  className={`${imageVisible?'img-loaded':''}`} src={posterImage!='posterthatismissing.jpg'?require(`../Images/${this.props.movie['poster-image']}`):placeHolder} onLoad={this.handleLoadImage}/>:
                    <img src={placeHolder} />}
                 </div>
-
+                <div className="text-white"><h4>{name}</h4></div>
             </div>
         );
     }
 }
 export default connect((store) => {
     return {
-       movies: store.movies.movies
     }
 }) (Movie);
